@@ -1,0 +1,6 @@
+application/vendor
+application/logs/*
+public_html/memorial-photos/*
+public_html/public_html.tar.gz
+res
+session/*

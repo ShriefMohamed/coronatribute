@@ -1,0 +1,24 @@
+RewriteEngine on
+
+#RewriteCond %{HTTP_HOST} ^(.*)\/.(.*)\.org [NC]
+#RewriteRule (.*) http://www.%2.org/%1 [R=301,L]
+#RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
+#RewriteCond %{HTTP_HOST} ^(.+)\.coronatribute\.org   [NC]
+#RewriteRule (.*) http://www.%2.org/%1 [R=301,L]
+#RewriteRule ^ http://coronatribute.org/suberror  [L,R]
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+
+#RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.org [NC]
+#RewriteRule ^(.*)$ http://www.%2.org/%1 [L,R]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php
+
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
